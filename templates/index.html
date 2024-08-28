@@ -1,13 +1,72 @@
-<h2>Welcome to AI Agent</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial AI Agent</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('financial_background.gif'); /* Replace with a financial-themed animated background */
+            background-size: cover;
+            background-attachment: fixed;
+        }
 
-<form action="/ai_agent" method="post">
-    <input type="submit" value="AI Agent">
-</form>
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
 
-<form action="/prediction" method="post">
-    <input type="submit" value="Homepage">
-</form>
+        h2 {
+            color: #004080; /* A dark blue that resonates with finance */
+            margin-bottom: 20px;
+        }
 
-<form action="/sg_joke" method="post">
-    <input type="submit" value="SG Joke">
-</form>
+        form {
+            margin: 15px 0;
+        }
+
+        input[type="submit"] {
+            background-color: #008CBA; /* A blue button color, common in financial sites */
+            color: white;
+            padding: 10px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005f7f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to AI Agent</h2>
+
+        <form action="/ai_agent" method="post">
+            <input type="submit" value="AI Agent">
+        </form>
+
+        <form action="/prediction" method="post">
+            <input type="submit" value="Homepage">
+        </form>
+
+        <form action="/sg_joke" method="post">
+            <input type="submit" value="SG Joke">
+        </form>
+    </div>
+</body>
+</html>
