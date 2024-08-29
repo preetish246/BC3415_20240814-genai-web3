@@ -67,5 +67,5 @@ def generate_jokes_when_api_is_down():
     ]
     return random.choice(jokes)
 
-if name == "__main__":
+if __name__ == "__main__":
     app.run()
