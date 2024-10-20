@@ -39,37 +39,20 @@ def ai_agent_reply():
 def prediction():
     return render_template("index.html")
 
-@app.route("/sg_joke", methods=["GET", "POST"])
-def sg_joke():
-    try:
-        response = palm.generate_text(
-            model=model_name,
-            prompt="Tell me a joke about Singapore.",
-            temperature=0.7,
-            max_output_tokens=50
-        )
-        return render_template("sg_joke.html", sg_joke=response.result)
-    except google_exceptions.InvalidArgument as e:
-        return render_template("ai_agent_reply.html", r=generate_jokes_when_api_is_down())
-
-def generate_jokes_when_api_is_down():
-    jokes = [
-        "Why did the Singaporean bring an umbrella to the bank? Because he heard it was always good to protect your “capital”!",
-        "Why don’t Singaporeans play hide and seek? Because good luck hiding in a country this small!",
-        "Why do Singaporeans always carry a tissue packet? To reserve their seat at the hawker center, of course!",
-        "Why did the MRT never make a joke? Because it never crosses the line!",
-        "Why was the Singaporean traffic light so polite? It always said, 'Please cross now, thank you!'",
-        "What did the durian say to the rambutan? 'You’re cute, but I’ve got layers of flavor!'",
-        "Why don’t Singaporeans get lost? Because they have GPS—'Good People Sense'!",
-        "Why was the Singaporean so good at maths? Because he could count all the fines!",
-        "Why don’t Singaporeans sunbathe? Because they already live in the 'Lion City'!",
-        "What do you call a lazy Singaporean? A 'Siow-lan!'"
-    ]
-    return random.choice(jokes)
-
 @app.route("/paynow", methods=["GET", "POST"])
 def paynow():
     return render_template("paynow.html")
+
+@app.route("/SA", methods=["GET","POST"])
+def SA():
+    return(render_template("SA.html"))
+
+@app.route("/SA_reply", methods=["GET","POST"])
+def SA_reply():
+    q = request.form.get("q")
+    r = textblob.TextBlob(q).sentiment
+    return(render_template("SA_reply.html",r=r))
+
 
 if __name__ == "__main__":
     app.run()
