@@ -2,71 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Financial Portal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial AI Agent</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-image: url('https://media.giphy.com/media/JtBZm3Getg3dqxK0zP/giphy.gif?cid=ecf05e47gs3v9djriod2t8m93jhowx0gwhcc0udu89wwxl9e&ep=v1_gifs_related&rid=giphy.gif&ct=g'); 
-            background-attachment: fixed;
-        }
-
-        .container {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            width: 300px;
-        }
-
-        h2 {
-            color: #004080; /* A dark blue that resonates with finance */
-            margin-bottom: 20px;
-        }
-
-        form {
-            margin: 15px 0;
-        }
-
-        input[type="submit"] {
-            background-color: #008CBA; /* A blue button color, common in financial sites */
-            color: white;
-            padding: 10px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #005f7f;
-        }
-    </style>
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
 </head>
+
 <body>
     <div class="container">
-        <h2>Welcome to AI Agent</h2>
-
+        <h2>Financial Portal - GenAI</h2>
         <form action="/ai_agent" method="post">
-            <input type="submit" value="AI Agent">
+            <input type="submit" value="Tell me a joke about Singapore.">
         </form>
-
         <form action="/prediction" method="post">
-            <input type="submit" value="Homepage">
+            <input type="submit" value="prediction">
         </form>
-
         <form action="/paynow" method="post">
-            <input type="submit" value="Paynow">
+            <input type="submit" value="paynow">
         </form>
-
         <form action="/SA" method="post">
             <input type="submit" value="Sentiment Analysis">
         </form>
